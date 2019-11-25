@@ -9,7 +9,7 @@ import { LoadingController } from '@ionic/angular';
   styleUrls: ['./auth.page.scss'],
 })
 export class AuthPage implements OnInit {
-  user = "";
+  userOrEmail = "";
   password = "";
 
 
@@ -40,7 +40,7 @@ export class AuthPage implements OnInit {
   onLoginwithService(){
     // console.log(this.user);
     // console.log(this.password);
-    this.authService.loginWithService(this.user, this.password).subscribe(
+    this.authService.loginWithService(this.userOrEmail, this.password).subscribe(
       token => {console.log(token)}
     );
 

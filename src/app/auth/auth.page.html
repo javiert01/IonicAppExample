@@ -11,12 +11,12 @@
       <ion-col size-sm="6" offset-sm="3">
           <ion-list>
               <ion-item>
-                <ion-label position="floating">E-mail</ion-label>
-                <ion-input type="email" ngModel name="email" required email></ion-input>
+                <ion-label position="floating" >E-mail or username</ion-label>
+                <ion-input type="email" [(ngModel)]="userOrEmail" name="email" required email></ion-input>
               </ion-item>
               <ion-item>
                 <ion-label position="floating">Password</ion-label>
-                <ion-input type="password" ngModel name="password" required minLength="6"></ion-input>
+                <ion-input type="password" [(ngModel)]="password" name="password" required minLength="6"></ion-input>
               </ion-item>
             </ion-list>
       </ion-col>
@@ -24,7 +24,7 @@
     <ion-row>
       <ion-col size-sm="6" offset-sm="3">
           <ion-button color="primary" fill="clear" expand="block">Switch to Login</ion-button>
-          <ion-button color="primary" (click)="onLogin()" expand="block">Login</ion-button>
+          <ion-button color="primary" (click)="onLoginwithService()" expand="block">Login</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
