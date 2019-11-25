@@ -9,6 +9,9 @@ import { LoadingController } from '@ionic/angular';
   styleUrls: ['./auth.page.scss'],
 })
 export class AuthPage implements OnInit {
+  user = "";
+  password = "";
+
 
   isLoading = false;
   constructor(private authService: AuthService, private router: Router,
@@ -33,5 +36,15 @@ export class AuthPage implements OnInit {
     });
     // this.router.navigateByUrl('/places/tabs/discover');
   }
+
+  onLoginwithService(){
+    // console.log(this.user);
+    // console.log(this.password);
+    this.authService.loginWithService(this.user, this.password).subscribe(
+      token => {console.log(token)}
+    );
+
+  }
+
 
 }
